@@ -1,0 +1,31 @@
+<odoo>
+    <record id="view_order_form_inherit_show_salesperson_phone" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.show.salesperson.phone</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sales_person']/field[@name='user_id']" position="after">
+                    <field name="show_salesperson_phone"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@id='informations']/div[last()]" position="replace">
+            <div t-if="doc.user_id.name" class="col-auto col-3 mw-100 mb-2">
+                    <strong>Salesperson:</strong>
+                    <p class="m-0">
+                        <t t-esc="doc.user_id.name"/>
+                        <t t-if="doc.show_salesperson_phone and doc.user_id.employee_id.mobile_phone">
+                            <t t-esc="' '"/> <!-- Añadir espacio -->
+                            <t t-esc="doc.user_id.employee_id.mobile_phone"/>
+                        </t>
+                    </p>
+                </div>
+        </xpath>
+    </template>
+
+
+</odoo>
+
