@@ -1,0 +1,9 @@
+[project]
+name = "zverp-addons-sale-workflow"
+version = "16.0"
+
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 16.0",
+]

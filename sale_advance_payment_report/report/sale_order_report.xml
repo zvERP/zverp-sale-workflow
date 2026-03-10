@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template
+        id="report_saleorder_document_inherit_advance_payment_amount"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath expr="//table[t[@t-call='account.document_tax_totals']]/t[@t-call='account.document_tax_totals']" position="before">
+            <t t-if="not doc.currency_id.is_zero(doc.advance_payment_amount)"
+               t-set="tax_totals"
+               t-value="dict(doc.tax_totals, amount_total=doc.amount_total_after_advance, formatted_amount_total=doc.amount_total_after_advance_display)"
+            />
+            <tr t-if="not doc.currency_id.is_zero(doc.advance_payment_amount)">
+                <td class="text-end">
+                    <strong>Advance payment</strong>
+                </td>
+                <td class="text-end">
+                    <span t-esc="-doc.advance_payment_amount" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template
+        id="report_saleorder_document_inherit_workshop_info"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath expr="//div[@id='informations']" position="after">
+            <t
+                t-set="has_workshop_data"
+                t-value="(doc.workshop_brand_model and doc.workshop_brand_model.strip()) or (doc.workshop_plate and doc.workshop_plate.strip()) or doc.workshop_km not in (False, None)"
+            />
+            <div t-if="doc.is_workshop_quote and has_workshop_data" class="row mt16 mb16">
+                <div t-if="doc.workshop_brand_model" class="col-auto col-3 mw-100 mb-2">
+                    <strong>Brand:</strong>
+                    <p class="m-0" t-field="doc.workshop_brand_model" />
+                </div>
+                <div t-if="doc.workshop_plate" class="col-auto col-3 mw-100 mb-2">
+                    <strong>Plate:</strong>
+                    <p class="m-0" t-field="doc.workshop_plate" />
+                </div>
+                <div t-if="doc.workshop_km not in (False, None)" class="col-auto col-3 mw-100 mb-2">
+                    <strong>Kilometers:</strong>
+                    <p class="m-0" t-field="doc.workshop_km" />
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

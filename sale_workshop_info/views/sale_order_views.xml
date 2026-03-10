@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit_workshop_info" model="ir.ui.view">
+        <field name="name">sale.order.form.workshop.info</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook" position="before">
+                <group string="Workshop data">
+                    <field name="is_workshop_quote" />
+                    <group attrs="{'invisible': [('is_workshop_quote', '=', False)]}">
+                        <field name="workshop_brand_model" />
+                        <field name="workshop_plate" />
+                        <field name="workshop_km" />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
