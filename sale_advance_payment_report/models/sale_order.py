@@ -19,12 +19,14 @@ class SaleOrder(models.Model):
         string="Total after advance",
         currency_field="currency_id",
         compute="_compute_amount_total_after_advance",
+        compute_sudo=True,
         store=True,
         readonly=True,
     )
     amount_total_after_advance_display = fields.Char(
         string="Formatted total after advance",
         compute="_compute_amount_total_after_advance",
+        compute_sudo=True,
         store=False,
         readonly=True,
     )
