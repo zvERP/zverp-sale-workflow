@@ -10,11 +10,28 @@
                     <field name="is_workshop_quote" />
                     <group attrs="{'invisible': [('is_workshop_quote', '=', False)]}">
                         <field name="workshop_brand_model" />
-                        <field name="workshop_plate" />
+                        <field
+                            name="matricula_id"
+                            placeholder="Select License Plate"
+                            domain="[('partner_id', '=', partner_id)]"
+                            context="{'default_partner_id': partner_id, 'default_brand_model': workshop_brand_model}"
+                            options="{'no_create_edit': True}"
+                        />
                         <field name="workshop_km" />
                     </group>
                 </group>
             </xpath>
+        </field>
+    </record>
+
+    <record id="view_invoice_search_inherit_matricula" model="ir.ui.view">
+        <field name="name">account.move.search.inherit.matricula</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <search>
+                <field name="matricula_id" />
+            </search>
         </field>
     </record>
 </odoo>

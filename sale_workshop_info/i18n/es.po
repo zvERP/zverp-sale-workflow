@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-10 10:54+0000\n"
-"PO-Revision-Date: 2026-03-10 12:32+0100\n"
+"POT-Creation-Date: 2026-03-15 21:24+0000\n"
+"PO-Revision-Date: 2026-03-15 22:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #. module: sale_workshop_info
 #: model_terms:ir.ui.view,arch_db:sale_workshop_info.report_invoice_document_inherit_workshop_info
@@ -35,17 +35,48 @@ msgstr "<strong>Kilómetros:</strong>"
 #: model_terms:ir.ui.view,arch_db:sale_workshop_info.report_invoice_document_inherit_workshop_info
 #: model_terms:ir.ui.view,arch_db:sale_workshop_info.report_saleorder_document_inherit_workshop_info
 #, fuzzy
-msgid "<strong>Plate:</strong>"
-msgstr "<strong>Placa:</strong>"
+msgid "<strong>License Plate:</strong>"
+msgstr "<strong>Matrícula:</strong>"
 
 #. module: sale_workshop_info
 #: model:ir.model.fields,field_description:sale_workshop_info.field_account_bank_statement_line__workshop_brand_model
 #: model:ir.model.fields,field_description:sale_workshop_info.field_account_move__workshop_brand_model
 #: model:ir.model.fields,field_description:sale_workshop_info.field_account_payment__workshop_brand_model
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__brand_model
 #: model:ir.model.fields,field_description:sale_workshop_info.field_sale_order__workshop_brand_model
 #, fuzzy
 msgid "Brand/Model"
 msgstr "Marca/Modelo"
+
+#. module: sale_workshop_info
+#: model:ir.model,name:sale_workshop_info.model_res_partner
+#, fuzzy
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__create_uid
+#, fuzzy
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__create_date
+#, fuzzy
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__display_name
+#, fuzzy
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__id
+#, fuzzy
+msgid "ID"
+msgstr "ID"
 
 #. module: sale_workshop_info
 #: model:ir.model,name:sale_workshop_info.model_account_move
@@ -63,19 +94,67 @@ msgid "Kilometers"
 msgstr "Kilómetros"
 
 #. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula____last_update
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__write_uid
+#, fuzzy
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__write_date
+#, fuzzy
+msgid "Last Updated on"
+msgstr "Actualizado el"
+
+#. module: sale_workshop_info
+#: model:ir.model,name:sale_workshop_info.model_res_partner_matricula
+#: model:ir.model.fields,field_description:sale_workshop_info.field_account_bank_statement_line__matricula_id
+#: model:ir.model.fields,field_description:sale_workshop_info.field_account_move__matricula_id
+#: model:ir.model.fields,field_description:sale_workshop_info.field_account_payment__matricula_id
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__name
+#: model:ir.model.fields,field_description:sale_workshop_info.field_sale_order__matricula_id
+#: model_terms:ir.ui.view,arch_db:sale_workshop_info.view_partner_search_inherit_matricula
+msgid "License Plate"
+msgstr "Matricula"
+
+#. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner__matricula_ids
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_users__matricula_ids
+#, fuzzy
+msgid "License Plates"
+msgstr "Matriculas"
+
+#. module: sale_workshop_info
+#: model:ir.model.fields,field_description:sale_workshop_info.field_res_partner_matricula__partner_id
+#, fuzzy
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: sale_workshop_info
 #: model:ir.model.fields,field_description:sale_workshop_info.field_account_bank_statement_line__workshop_plate
 #: model:ir.model.fields,field_description:sale_workshop_info.field_account_move__workshop_plate
 #: model:ir.model.fields,field_description:sale_workshop_info.field_account_payment__workshop_plate
 #: model:ir.model.fields,field_description:sale_workshop_info.field_sale_order__workshop_plate
-#, fuzzy
 msgid "Plate"
-msgstr "Plato"
+msgstr "Matrícula"
 
 #. module: sale_workshop_info
 #: model:ir.model,name:sale_workshop_info.model_sale_order
 #, fuzzy
 msgid "Sales Order"
 msgstr "Orden de Venta"
+
+#. module: sale_workshop_info
+#: model_terms:ir.ui.view,arch_db:sale_workshop_info.view_move_form_inherit_workshop_info
+#: model_terms:ir.ui.view,arch_db:sale_workshop_info.view_order_form_inherit_workshop_info
+#, fuzzy
+msgid "Select License Plate"
+msgstr "Seleccione matrícula"
 
 #. module: sale_workshop_info
 #: model_terms:ir.ui.view,arch_db:sale_workshop_info.view_move_form_inherit_workshop_info

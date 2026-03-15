@@ -7,16 +7,16 @@
         <xpath expr="//div[@id='informations']" position="after">
             <t
                 t-set="has_workshop_data"
-                t-value="(o.workshop_brand_model and o.workshop_brand_model.strip()) or (o.workshop_plate and o.workshop_plate.strip()) or o.workshop_km not in (False, None)"
+                t-value="(o.workshop_brand_model and o.workshop_brand_model.strip()) or o.matricula_id or (o.workshop_plate and o.workshop_plate.strip()) or o.workshop_km not in (False, None)"
             />
             <div t-if="o.is_workshop_quote and has_workshop_data" class="row mt16 mb16">
                 <div t-if="o.workshop_brand_model" class="col-auto col-3 mw-100 mb-2">
                     <strong>Brand:</strong>
                     <p class="m-0" t-field="o.workshop_brand_model" />
                 </div>
-                <div t-if="o.workshop_plate" class="col-auto col-3 mw-100 mb-2">
-                    <strong>Plate:</strong>
-                    <p class="m-0" t-field="o.workshop_plate" />
+                <div t-if="o.matricula_id or o.workshop_plate" class="col-auto col-3 mw-100 mb-2">
+                    <strong>License Plate:</strong>
+                    <p class="m-0" t-esc="o.matricula_id.name if o.matricula_id else o.workshop_plate" />
                 </div>
                 <div t-if="o.workshop_km not in (False, None)" class="col-auto col-3 mw-100 mb-2">
                     <strong>Kilometers:</strong>
