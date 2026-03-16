@@ -129,6 +129,29 @@ class TestSaleWorkshopInfo(common.TransactionCase):
         self.assertIn("Renault Clio", invoice_html)
         self.assertIn("MAT-INV-01", invoice_html)
 
+    def test_03b_invoice_keeps_manual_brand_model_from_quote(self):
+        plate = self.matricula_model.create(
+            {
+                "name": "MAT-INV-02",
+                "partner_id": self.partner.id,
+                "brand_model": False,
+            }
+        )
+        order = self._create_sale_order(
+            {
+                "is_workshop_quote": True,
+                "workshop_brand_model": "Mazda 3",
+                "workshop_plate": "6543ZYX",
+                "workshop_km": 87000,
+                "matricula_id": plate.id,
+            }
+        )
+        order.action_confirm()
+        invoice = order._create_invoices()
+
+        self.assertEqual(invoice.matricula_id, plate)
+        self.assertEqual(invoice.workshop_brand_model, "Mazda 3")
+
     def test_06_order_auto_assigns_single_partner_plate(self):
         order = self.env["sale.order"].create({"partner_id": self.partner_single_plate.id})
         self.assertFalse(order.matricula_id)

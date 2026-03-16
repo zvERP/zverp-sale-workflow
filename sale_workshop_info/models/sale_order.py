@@ -29,6 +29,7 @@ class SaleOrder(models.Model):
             {
                 "matricula_id": self.matricula_id.id,
                 "is_workshop_quote": self.is_workshop_quote,
+                "workshop_brand_model": self.workshop_brand_model,
                 "workshop_plate": self.workshop_plate,
                 "workshop_km": self.workshop_km,
             }
